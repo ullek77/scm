@@ -1,10 +1,10 @@
 Name:           pika-backup
-Version:        0.7.2
+Version:        0.7.4
 Release:        1%{?dist}
 Summary:        Simple backups based on borg
 License:        GPLv3+
 URL:            https://gitlab.gnome.org/World/pika-backup
-Source:         v%{version}.tar.gz
+Source:         %{url}/-/archive/%{version}/%{name}-%{version}.tar.gz
 BuildRequires:  meson
 BuildRequires:  git
 BuildRequires:  pkgconfig
