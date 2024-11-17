@@ -1,5 +1,5 @@
 Name:       jellyfin-media-player
-Version:    1.10.1
+Version:    1.11.1
 Release:    1%{?dist}
 Summary:    Jellyfin Desktop Client based on Plex Media Player
 License:    GPLv3
@@ -59,3 +59,4 @@ chrpath --delete $RPM_BUILD_ROOT%{_bindir}/jellyfinmediaplayer
 %{_datarootdir}/metainfo/com.github.iwalton3.jellyfin-media-player.appdata.xml
 
 %changelog
++ version update to 1.11.1
