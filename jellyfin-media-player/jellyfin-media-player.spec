@@ -59,4 +59,4 @@ chrpath --delete $RPM_BUILD_ROOT%{_bindir}/jellyfinmediaplayer
 %{_datarootdir}/metainfo/com.github.iwalton3.jellyfin-media-player.appdata.xml
 
 %changelog
-+ version update to 1.11.1
+* version update to 1.11.1
