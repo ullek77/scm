@@ -4,7 +4,7 @@ Release:        1%{?dist}
 Summary:        Simple backups based on borg
 License:        GPLv3+
 URL:            https://gitlab.gnome.org/World/pika-backup
-Source:         %{url}/-/archive/%{version}/%{name}-v%{version}.tar.gz
+Source:         %{url}/-/archive/v%{version}/%{name}-v%{version}.tar.gz
 BuildRequires:  meson
 BuildRequires:  git
 BuildRequires:  pkgconfig
