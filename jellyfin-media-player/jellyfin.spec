@@ -6,7 +6,7 @@ License:    GPLv3
 URL:        https://github.com/jellyfin/jellyfin-media-player
 Source0:    https://github.com/jellyfin/jellyfin-media-player/archive/refs/tags/v%{version}.tar.gz
 
-BuildRequires: autoconf automake libtool cmake wget python g qt-devel
+BuildRequires: autoconf automake libtool cmake wget python g++ qt-devel
 BuildRequires: meson ninja-build chrpath
 BuildRequires: pkgconfig(freetype2)
 BuildRequires: pkgconfig(fribidi)
