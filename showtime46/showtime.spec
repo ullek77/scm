@@ -48,4 +48,4 @@ chmod 755 %{buildroot}/%{_bindir}/%{name}
 %{python3_sitelib}/%{name}/
 
 %changelog
-* Initial build
+%autochangelog
