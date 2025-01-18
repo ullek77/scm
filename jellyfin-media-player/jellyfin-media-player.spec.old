@@ -39,7 +39,7 @@ Supports audio passthrough. Based on Plex Media Player.
 
 %prep
 %setup -n jellyfin-media-player-%{version}
-mkdir build
+./download_webclient.sh
 
 %build
 cd build
@@ -59,3 +59,4 @@ chrpath --delete $RPM_BUILD_ROOT%{_bindir}/jellyfinmediaplayer
 %{_datarootdir}/metainfo/com.github.iwalton3.jellyfin-media-player.appdata.xml
 
 %changelog
+* version update to 1.11.1
