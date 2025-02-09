@@ -1,6 +1,6 @@
 %global gittag v%{version}
 
-Name:           MediaElch
+Name:           mediaelch
 Version:        2.12.0
 Release:        3%{?dist}
 Summary:        Media Manager for Kodi
