@@ -7,7 +7,7 @@ Summary: The minimal, blazing-fast, and infinitely customizable prompt for any s
 
 License: ISC
 URL: https://github.com/starship/starship
-Source: %{url}/releases/download/v%{version}/%{name}-x86_64-unknown-linux-gnu.tar.gz
+Source: %{url}/releases/download/v%{version}/%{name}-aarch64-unknown-linux-musl.tar.gz
 # No man page yet (https://github.com/starship/starship/issues/2926), so including the config README
 Source1: https://raw.githubusercontent.com/starship/starship/v%{version}/docs/config/README.md
 
