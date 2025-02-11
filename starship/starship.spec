@@ -1,53 +1,45 @@
-%bcond_without check
+%global debug_package %{nil}
 
-%global crate starship
-%global cargo_install_lib 0
+Name:    starship
+Version: 1.22.1
+Release: 1%{?dist}
+Summary: The minimal, blazing-fast, and infinitely customizable prompt for any shell
 
-Name:           starship
-Version:        1.22.1
-Release:        1%{?dist}
-Summary:        The minimal, blazing-fast, and infinitely customizable prompt for any shell!
-License:        ISC
+License: ISC
+URL: https://github.com/starship/starship
+Source: %{url}/releases/download/v%{version}/%{name}-x86_64-unknown-linux-gnu.tar.gz
+# No man page yet (https://github.com/starship/starship/issues/2926), so including the config README
+Source1: https://raw.githubusercontent.com/starship/starship/v%{version}/docs/config/README.md
 
-URL:            https://github.com/starship/starship
-Source:         %{url}/archive/refs/tags/v%{version}.tar.gz
+%description
+The minimal, blazing-fast, and infinitely customizable prompt for any shell!
 
-BuildRequires:  cargo-rpm-macros >= 26
-BuildRequires:  gcc
-BuildRequires:  gcc-c++
-BuildRequires:  cmake
-BuildRequires:  zlib-devel
-BuildRequires:  git
+- Fast: it's fast – really really fast! 🚀
+- Customizable: configure every aspect of your prompt.
+- Universal: works on any shell, on any operating system.
+- Intelligent: shows relevant information at a glance.
+- Feature rich: support for all your favorite tools.
+- Easy: quick to install – start using it in minutes.
 
-%global _description %{expand:
-The minimal, blazing-fast, and infinitely customizable prompt for any shell!}
-
-%description %{_description}
 %prep
-%autosetup -n %{crate}-%{version} -p1
-cargo vendor
-%cargo_prep -v vendor
+%autosetup -c
+# Copy config README here
+cp %{SOURCE1} CONFIGURATION.md
 
 %build
-%cargo_build
-%{cargo_license_summary}
-%{cargo_license} > LICENSE.dependencies
-%{cargo_vendor_manifest}
+./%{name} completions bash > %{name}.bash
+./%{name} completions zsh > _%{name}
+# Fish has built in completions: https://github.com/fish-shell/fish-shell/blob/master/share/completions/starship.fish
 
 %install
-%cargo_install
+install -p -D %{name} %{buildroot}%{_bindir}/%{name}
 
-%if %{with check}
-%check
-%cargo_test
-%endif
+# Shell completions (Fish has built-in completions, see above)
+install -pvD -m 0644 %{name}.bash %{buildroot}%{bash_completions_dir}/%{name}
+install -pvD -m 0644 _%{name} %{buildroot}%{zsh_completions_dir}/_%{name}
 
 %files
-%license LICENSE
-%license LICENSE.dependencies
-%license cargo-vendor.txt
-%doc docs/README.md
-%{_bindir}/starship
-
-%changelog
-%autochangelog
+%doc CONFIGURATION.md
+%{_bindir}/%{name}
+%{bash_completions_dir}/%{name}
+%{zsh_completions_dir}/_%{name}
