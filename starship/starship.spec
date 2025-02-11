@@ -43,3 +43,7 @@ install -pvD -m 0644 _%{name} %{buildroot}%{zsh_completions_dir}/_%{name}
 %{_bindir}/%{name}
 %{bash_completions_dir}/%{name}
 %{zsh_completions_dir}/_%{name}
+
+%changelog
+* Tue Feb 11 2025 ullek <ullek1977@gmail.com>
+- Initial package
