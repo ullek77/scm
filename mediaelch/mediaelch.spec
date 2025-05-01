@@ -37,7 +37,7 @@ Fanarts are downloaded automatically from fanart.tv.
 
 
 %prep
-%autosetup
+%autosetup -c
 
 
 %build
