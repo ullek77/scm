@@ -7,7 +7,7 @@ Summary:        Media Manager for Kodi
 
 License:        LGPL-3.0-only
 URL:            https://mediaelch.github.io/mediaelch-doc/
-Source0:        https://github.com/komet/mediaelch/archive/%{gittag}/%{name}-%{version}.tar.gz
+Source0:        https://github.com/Komet/MediaElch.git
 
 BuildRequires:  make
 BuildRequires:  gcc
@@ -41,11 +41,15 @@ Fanarts are downloaded automatically from fanart.tv.
 
 
 %build
-%make 
+%cmake \
+  -DDISABLE_UPDATER=ON \
+  -DUSE_EXTERN_QUAZIP=ON \
+  -DMEDIAELCH_FORCE_QT6=ON
+%cmake_build
 
 
 %install
-%make_install
+%cmake_install
 
 
 %files
