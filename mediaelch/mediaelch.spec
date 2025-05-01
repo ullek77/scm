@@ -12,9 +12,15 @@ Source0:        https://github.com/komet/mediaelch/archive/%{gittag}/%{name}-%{v
 BuildRequires:  cmake
 BuildRequires:  gcc
 BuildRequires:  g++
+BuildRequires:  qt6-qtbase-devel
+BuildRequires:  qt6-qtmultimedia
 BuildRequires:  qt6-qtmultimedia-devel
+BuildRequires:  qt6-qttools
 BuildRequires:  qt6-qttools-devel
+BuildRequires:  qt6-qtdeclarative-devel
+BuildRequires:  qt6-qtsvg
 BuildRequires:  qt6-qtsvg-devel
+BuildRequires:  qt6-qt5compat
 BuildRequires:  qt6-qt5compat-devel
 BuildRequires:  libmediainfo-devel
 BuildRequires:  quazip-qt6-devel
@@ -22,7 +28,7 @@ Requires:       qt6-qtmultimedia
 Requires:       qt6-qtsvg
 Requires:       qt6-qt5compat
 Requires:       quazip-qt6
-
+Requires:       libmediainfo
 
 %description
 MediaElch is a MediaManager for Kodi.
