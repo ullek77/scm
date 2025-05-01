@@ -41,11 +41,11 @@ Fanarts are downloaded automatically from fanart.tv.
 
 
 %build
-%qmake \
+%make \
   -DDISABLE_UPDATER=ON \
   -DUSE_EXTERN_QUAZIP=ON \
   -DMEDIAELCH_FORCE_QT6=ON
-%qmake_build
+%make_build
 
 
 %install
