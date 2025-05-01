@@ -9,7 +9,7 @@ License:        LGPL-3.0-only
 URL:            https://mediaelch.github.io/mediaelch-doc/
 Source0:        https://github.com/komet/mediaelch/archive/%{gittag}/%{name}-%{version}.tar.gz
 
-BuildRequires:  make
+BuildRequires:  qmake
 BuildRequires:  gcc
 BuildRequires:  g++
 BuildRequires:  qt6-qtbase-devel
@@ -37,19 +37,19 @@ Fanarts are downloaded automatically from fanart.tv.
 
 
 %prep
-%autosetup -c
+%autosetup
 
 
 %build
-pushd src %cmake \
+%qmake \
   -DDISABLE_UPDATER=ON \
   -DUSE_EXTERN_QUAZIP=ON \
   -DMEDIAELCH_FORCE_QT6=ON
-pushd src %cmake_build
+%qmake_build
 
 
 %install
-%cmake_install
+%qmake_install
 
 
 %files
