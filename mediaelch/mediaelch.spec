@@ -9,7 +9,7 @@ License:        LGPL-3.0-only
 URL:            https://mediaelch.github.io/mediaelch-doc/
 Source0:        https://github.com/komet/mediaelch/archive/%{gittag}/%{name}-%{version}.tar.gz
 
-BuildRequires:  qmake
+BuildRequires:  make
 BuildRequires:  gcc
 BuildRequires:  g++
 BuildRequires:  qt6-qtbase-devel
