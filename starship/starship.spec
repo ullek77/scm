@@ -1,7 +1,7 @@
 %global debug_package %{nil}
 
 Name:    starship
-Version: 1.23.0
+Version: 1.24.0
 Release: 1%{?dist}
 Summary: The minimal, blazing-fast, and infinitely customizable prompt for any shell
 
@@ -45,5 +45,5 @@ install -pvD -m 0644 _%{name} %{buildroot}%{zsh_completions_dir}/_%{name}
 %{zsh_completions_dir}/_%{name}
 
 %changelog
-* Tue Feb 11 2025 ullek <ullek1977@gmail.com>
-- Initial package
+* Sun Oct 26 2025 ullek <ullek1977@gmail.com>
+- bump version to 1.24
